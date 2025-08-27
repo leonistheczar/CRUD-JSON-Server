@@ -1,6 +1,6 @@
 # REST API Project
 
-This project is a responsive REST API implementation with frontend integration. It is built using **JavaScript (Vanilla JS)**, bundled with **Webpack** for compiling it to older JS versions (i.e. ES5), and styled with CSS using **Tailwind**. It also includes a mock database (`db.json`) to simulate backend data.
+This project is a responsive REST API implementation with frontend integration. It is built using **JavaScript (Vanilla JS)**, bundled with **Webpack** for compiling it, and **Babel** to compile it to older JS versions (i.e. ES5), and styled with CSS using **Tailwind**. It also includes a mock database (`db.json`) to simulate backend data.
 
 ---
 
@@ -10,7 +10,7 @@ This project is a responsive REST API implementation with frontend integration. 
 - Custom `easyHTTP.js` comprising of  AJAX / Fetch (Promises) / Fetch (Async/Await) requests
 - Modular JavaScript structure (`app.js`, `ui.js`)
 - CSS workflow (input → output)
-- Bundled with Webpack
+- Bundled with Webpack & Babel
 
 ---
 
