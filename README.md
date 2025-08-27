@@ -4,24 +4,6 @@ This project is a responsive REST API implementation with frontend integration. 
 
 ---
 
-## 📂 Project Structure
-├── api/
-│ └── db.json # Mock database (used with JSON Server - *Create db.json locally* )
-├── src/
-│ ├── js/
-│ │ ├── app.js # Main application logic
-│ │ ├── easyHTTP.js # Custom HTTP request helper (GET, POST, PUT, DELETE)
-│ │ ├── ui.js # UI rendering & DOM manipulation
-│ │ └── app.bundler.js # Webpack bundled output
-│ └── style/
-│ ├── input.css # Source CSS
-│ └── output.css # Compiled CSS (Tailwind)
-├── index.html # Main entry point
-├── webpack.config.js # Webpack configuration
-└── package.json # Dependencies & scripts
-
----
-
 ## 🚀 Features
 
 - REST API simulation using `db.json`
@@ -35,11 +17,12 @@ This project is a responsive REST API implementation with frontend integration. 
 ## ⚡ Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/leonistheczar/CRUD-JSON-Server.git
    cd CRUD-JSON:Server
    
-2. Install dependencies:
+3. Install dependencies:
 
 ```bash
 npm install
@@ -56,3 +39,15 @@ npm run build
 ```bash
 npm run start
 ```
+
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to fork this repo and submit a pull request.
+
+## 📜 License
+
+This project is licensed under the MIT License.
