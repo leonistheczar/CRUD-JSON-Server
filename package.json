@@ -1,0 +1,29 @@
+{
+  "name": "babel_webpack_demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "build:prod": "webpack --config webpack.config.js --mode production",
+    "watch": "webpack --config webpack.config.js --watch",
+    "json:server": "json-server --watch api/db.json --port 3000 --static ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "json-server": "^1.0.0-beta.3",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "babel-loader": "^10.0.0",
+    "webpack": "^5.101.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  }
+}

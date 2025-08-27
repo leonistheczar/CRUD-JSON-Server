@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/58218da0f5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/src/style/output.css">
+    <title>Javascript - CRUD Post Application</title>
+</head>
+
+<body class="overflow-x-hidden relative">
+    <!-- Alerts / Info / Critical  -->
+     <div id="alert" class="hidden bg-[#ffe5e5] border-l-[5px] border-red-500 p-4 max-w-md mx-auto absolute top-1/5 right-3 z-10">
+        <div class="container flex items-center gap-x-5 ">
+            <div id="alert-icon">
+                <i class="fa-solid fa-triangle-exclamation scale-200" style="color: #e62828;"></i>
+            </div>
+            <div id="alert-content">
+                <p id="alert-title" class="font-semibold">Post - Submission Error</p>
+                <span id="alert-desc" class="text-sm">Kindly check post input fields validation, and then try again</span>
+            </div>
+        </div>
+     </div>
+     <!-- Success -->
+     <div id="success" class="hidden bg-[#ddffdf] border-l-[5px] border-green-500 p-4 max-w-md mx-auto absolute top-1/12 left-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
+        <div class="container flex items-center gap-x-5 ">
+            <div id="success-icon">
+                <i class="fa-solid fa-circle-check fa-2xl" style="color: #71f1a2;"></i>
+            </div>
+            <div id="success-content">
+                <p id="success-title" class="font-semibold"></p>
+                <span id="success-desc" class="text-sm"></span>
+            </div>
+        </div>
+     </div>
+<!-- Confirmation -->
+<div id="confirmation" class="hidden slideInAnimation pointer-events-auto bg-[#f3f9ff] border-l-[5px] border-blue-500 p-4 max-w-md mx-auto absolute right-1/2 translate-x-1/2 z-10 rounded-r-md shadow-lg">
+    <div class="space-y-3">
+        <div id="confirm-content">
+            <p id="confirm-title" class="font-semibold text-gray-800">Post - Submission </p>
+            <span id="confirm-desc" class="text-sm text-gray-600">Kindly check post input fields validation, and then try again</span>
+        </div>
+        <div id="verifyOption" class="flex gap-2">
+            <a href="#" id="allow" class="px-3 py-2 bg-[#234fa1] text-white rounded hover:bg-[#1e3d7a]">Yes</a>
+            <a href="#" id="reject" class="px-3 py-2 bg-[#e64747] text-white rounded hover:bg-[#d63939]">No</a>
+        </div>
+    </div>
+</div>
+<!-- Side-menu Overlay -->
+ <div id="sideOverlay" class="hidden absolute h-dvh w-full top-0 left-0 bg-slate-900 opacity-70"></div>
+ <div id="sideMenu" class="hidden p-4 h-dvh w-1/4 bg-[#dfeaff] fixed top-0 z-20">
+    <div class="relative p-2">
+        <a href="#" id="sideMenuClose" class="absolute top-0 right-0 text-lg hover:text-slate-700" title="Close Menu"><i class="fa fa-xmark fa-lg"></i></a>
+        <ul id="sideMenuLinks" class="flex flex-col gap-y-6 mt-6">
+            <li id="list-1" class="font-semibold hover:text-[#2a4453]"><a href="index.html">Home</a></li>
+            <li id="list-2" class="font-semibold hover:text-[#2a4453]"><a href="#">About</a></li>
+            <li id="list-3" class="font-semibold hover:text-[#2a4453]"><a href="#">Contact</a></li>
+        </ul>
+    </div>
+ </div>
+    <!-- Navbar -->
+    <nav class="main-nav p-5 w-lvw h-full flex flex-row justify-between items-center text-center bg-[#155cc7] text-white"
+        id="navbar">
+        <div id="nav-heading" class="flex items-center gap-x-1.5">
+            <a href="index.html" id="sideMenuIcon">
+                <i class="fa-solid fa-bars text-2xl mt-[4px]"></i>
+            </a>
+            <a href="index.html">
+                <h1 class="text-2xl">Microposts</h1>
+            </a>
+        </div>
+        <!-- <div class="nav-links">
+            <ul id="navs" class="flex px-4 py-2 gap-4">
+                <a href="index.html">
+                    <li id="home" class="nav-1 p-2 rounded-md transition-all hover:bg-blue-950">Home</li>
+                </a>
+                <a href="#">
+                    <li id="about" class="nav-2 p-2 rounded-md transition-all hover:bg-blue-950">About</li>
+                </a>
+                <a href="#">
+                    <li id="contact" class="nav-3 p-2 rounded-md transition-all hover:bg-blue-950">Contact</li>
+                </a>
+            </ul>
+        </div> -->
+    </nav>
+    <!-- Main section - POST form -->
+    <section id="posts-form" class="p-4 border-b-2 border-blue-500">
+        <div class="container max-w-5xl mx-auto p-3 flex flex-col justify-between">
+            <h2 class="text-4xl font-semibold text-center py-2">Say Something</h2>
+            <p id="post-sub-title" class="my-2.5 text-slate-600 text-xl">What's on your mind?</p>
+            <form class="post-form">
+                <div class="post-fields grid gap-y-4">
+                    <div class="post-title-field flex flex-col">
+                        <label for="title" class="text-lg pb-1.5">Title</label>
+                        <input type="text" name="title" id="title"
+                            class="border-[1px] border-gray-400 rounded px-1.5 py-2 focus:border-blue-700 outline-none"
+                            placeholder="Enter Post Title">
+                    </div>
+                    <div class="post-body-field flex flex-col">
+                        <label for="body" class="text-lg pb-1.5">Post Body</label>
+                        <textarea id="body"
+                            class="resize border-[1px] border-gray-400 rounded px-1.5 py-2 focus:border-blue-700 outline-none"
+                            placeholder="Enter Post Body"></textarea>
+                    </div>
+                </div>
+                <div class="post-submit mt-4">
+                    <button type="submit" id="post-submit"
+                        class="inline-block px-4 py-2 rounded-lg cursor-pointer bg-[#155cc7] text-white text-center transition-all hover:bg-blue-900">Post
+                        It!</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- FETCH POSTS -->
+    <section id="posts" class="p-4 bg-[#001e46]">
+        <div class="container flex flex-col justify-between p-3 mx-auto">
+            <h2 class="text-4xl font-semibold text-center text-white">Posts</h2>
+            <div class="apiPosts flex flex-col gap-y-5 mt-4"></div>
+        </div>
+    </section>
+    <!-- JS script -->
+    <script src="./js/app.bundler.js" defer></script>
+</body>
+
+</html>
