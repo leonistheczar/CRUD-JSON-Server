@@ -342,7 +342,7 @@ function updatePost(e) {
             if (response) {
               http.fetchPromise
                 .put(
-                  `${API_BASE_URL}posts/${postID}`,
+                  `${API_BASE_URL}/posts/${postID}`,
                   UI.getPostFields()
                 )
                 .catch((err) => {
