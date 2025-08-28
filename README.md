@@ -4,6 +4,8 @@ This project is a responsive REST API implementation with frontend integration. 
 
 ---
 
+## ⭐ Project Link
+Live Project Link deployed on Render as a Web Service: [CRUD-JSON:Server](https://crud-json-server-qapr.onrender.com)
 ## 🚀 Features
 
 - REST API simulation using `db.json`
