@@ -2,3 +2,4 @@ node_modules
 debug.log
 .vscode/settings.json
 /src/js/app.bundler.js
+/src/app.bundler.js
