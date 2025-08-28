@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "title": "EasyHTTP - First Post",
+      "body": "EasyHTTP - Implementation - Added, Updated, Deleted - Completed",
+      "id": "3126"
+    },
+    {
+      "title": "Fetch (Async/Await) - First Post",
+      "body": "Fetch (Async/Await) - Implementation - Added, Updated and Deleted - Completed",
+      "id": "d794"
+    },
+    {
+      "title": "FetchPromises - First Post",
+      "body": "FetchPromises - Implementation - Added, Updated and Deleted - Completed",
+      "id": "5968"
+    }
+  ]
+}
