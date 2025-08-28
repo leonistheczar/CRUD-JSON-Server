@@ -4,9 +4,8 @@ module.exports = {
     entry: './src/js/app.js',
 
     output: {
-        path: path.resolve(__dirname, 'dist'),  // compiled files go here
+        path: path.resolve(__dirname, 'public'),  // compiled files go here
         filename: 'app.bundler.js',
-        clean: true, // cleans old files in dist before new build
     },
 
     module: {
