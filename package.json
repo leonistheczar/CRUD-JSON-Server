@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node src/js/app.bundler.js",
+    "start": "json-server --host 0.0.0.0 --port 10000 api/db.json --static ./src",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
     "build:prod": "webpack --config webpack.config.js --mode production",
