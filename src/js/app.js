@@ -2,6 +2,12 @@ import * as http from "./easyHTTP.js";
 import { UI } from "./ui.js";
 let uiSelectors = UI.uiSelectors;
 
+// JSON-API
+const API_BASE_URL =
+  window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://crud-json-server-qapr.onrender.com"; // Render backend URL
+
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
   // Fetch Posts
@@ -282,7 +288,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Custom Fetch (Promises)
 function getPosts() {
   http.fetchPromise
-    .get("http://localhost:3000/posts")
+    .get(`${API_BASE_URL}/posts`)
     .then((data) => {
       if (data) {
         UI.fetchPosts(data);
@@ -301,7 +307,7 @@ function addPost() {
         if (response) {
           // Only submit if user confirms
           http.fetchPromise
-            .post("http://localhost:3000/posts", post)
+            .post(`${API_BASE_URL}/posts`, post)
             .catch((err) => {
               if (err) {
                 console.log(err);
@@ -336,7 +342,7 @@ function updatePost(e) {
             if (response) {
               http.fetchPromise
                 .put(
-                  `http://localhost:3000/posts/${postID}`,
+                  `${API_BASE_URL}posts/${postID}`,
                   UI.getPostFields()
                 )
                 .catch((err) => {
@@ -365,7 +371,7 @@ function deletePost(e) {
   console.log(postID);
   if (postID) {
     http.fetchPromise
-      .delete(`http://localhost:3000/posts/${postID}`)
+      .delete(`${API_BASE_URL}/posts/${postID}`)
       .catch((err) => {
         if (err) {
           console.log(err);
